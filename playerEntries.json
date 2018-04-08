@@ -1,0 +1,103 @@
+[
+ {
+  "name": "admin",
+  "payed": "No",
+  "password": "1212"
+ },
+ {
+  "name": "Souha Al-Sawda",
+  "payed": "No",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "1"
+    },
+    {
+     "winner": "Boston",
+     "numberOfGames": "2"
+    },
+    {
+     "winner": "Washington",
+     "numberOfGames": "3"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "4"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "5"
+    },
+    {
+     "winner": "San Jose",
+     "numberOfGames": "6"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "7"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "8"
+    }
+   ],
+   "easternFinalist": "Tampa Bay",
+   "westernFinalist": "Vegas",
+   "cupWinner": "Minnesota"
+  }
+ },
+ {
+  "name": "Martin Audet",
+  "payed": "No"
+ },
+ {
+  "name": "Eric Bertrand",
+  "payed": "No"
+ },
+ {
+  "name": "Pierre Clavet",
+  "payed": "No"
+ },
+ {
+  "name": "Andre Charette",
+  "payed": "No"
+ },
+ {
+  "name": "Angelo De Cicco",
+  "payed": "No"
+ },
+ {
+  "name": "Paolo Giannetti",
+  "payed": "No"
+ },
+ {
+  "name": "Brian Hubbs",
+  "payed": "No"
+ },
+ {
+  "name": "Dany Lemieux",
+  "payed": "No"
+ },
+ {
+  "name": "Michel Lessard",
+  "payed": "No"
+ },
+ {
+  "name": "Ted Knowles",
+  "payed": "No"
+ },
+ {
+  "name": "Andre-Claude Paulin",
+  "payed": "No",
+  "password": "1212"
+ },
+ {
+  "name": "Jason Sagan",
+  "payed": "No"
+ },
+ {
+  "name": "Sarah Woolverton",
+  "payed": "No"
+ }
+]
