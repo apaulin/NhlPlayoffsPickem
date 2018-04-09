@@ -1,5 +1,11 @@
 <html>
 <head>
+	<style>
+		select{
+			font-size: 36px;
+		};
+		
+	</style>
 <script language="javascript">
 var getConfigInfo = new XMLHttpRequest();
 var setConfigInfo = new XMLHttpRequest();
@@ -49,7 +55,7 @@ var gebi = function(id)
 </script>
 </head>
 <body onload="load();">
-<input type="text" id="passwordText" />
+<input type="text" id="passwordText" /><br/>
 Pick Period 
 <select id="periodSelect">
 	<option value="true">True</option>
@@ -63,6 +69,7 @@ Round
 	<option value="3">3</option>
 	<option value="4">4</option>
 </select>
+<br/>
 <input type="button" id="submitButton" value="Submit" onclick="submit();" disabled/>
 </body>
 </html>

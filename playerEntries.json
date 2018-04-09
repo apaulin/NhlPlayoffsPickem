@@ -11,81 +11,100 @@
    "matchups": [
     {
      "winner": "Tampa Bay",
-     "numberOfGames": "1"
+     "numberOfGames": "6",
+     "weigthOfGame": "5"
     },
     {
-     "winner": "Boston",
-     "numberOfGames": "2"
+     "winner": "Toronto",
+     "numberOfGames": "6",
+     "weigthOfGame": "6"
     },
     {
      "winner": "Washington",
-     "numberOfGames": "3"
+     "numberOfGames": "5",
+     "weigthOfGame": "4"
     },
     {
-     "winner": "Pittsburgh",
-     "numberOfGames": "4"
+     "winner": "Columbus",
+     "numberOfGames": "7",
+     "weigthOfGame": "3"
     },
     {
-     "winner": "Vegas",
-     "numberOfGames": "5"
+     "winner": "Anaheim",
+     "numberOfGames": "6",
+     "weigthOfGame": "1"
     },
     {
      "winner": "San Jose",
-     "numberOfGames": "6"
+     "numberOfGames": "6",
+     "weigthOfGame": "2"
     },
     {
      "winner": "Nashville",
-     "numberOfGames": "7"
+     "numberOfGames": "8",
+     "weigthOfGame": "7"
     },
     {
-     "winner": "Winnipeg",
-     "numberOfGames": "8"
+     "winner": "Minnesota",
+     "numberOfGames": "8",
+     "weigthOfGame": "8"
     }
    ],
-   "easternFinalist": "Tampa Bay",
-   "westernFinalist": "Vegas",
-   "cupWinner": "Minnesota"
-  }
+   "easternFinalist": "Philadelphia",
+   "westernFinalist": "Los Angeles",
+   "cupWinner": "Pittsburgh"
+  },
+  "password": ""
  },
  {
   "name": "Martin Audet",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Eric Bertrand",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Pierre Clavet",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Andre Charette",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Angelo De Cicco",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Paolo Giannetti",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Brian Hubbs",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Dany Lemieux",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Michel Lessard",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Ted Knowles",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Andre-Claude Paulin",
@@ -94,10 +113,12 @@
  },
  {
   "name": "Jason Sagan",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  },
  {
   "name": "Sarah Woolverton",
-  "payed": "No"
+  "payed": "No",
+  "password": ""
  }
 ]

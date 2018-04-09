@@ -118,9 +118,23 @@ router.route("/logininfo/:username/:password").post(function(req, res, next)
 	var loginInfoString = req.body;
 	var loginInfo = JSON.parse(loginInfoString);
 
+	config.error = -1;
 	debug("GET Login Attempt from " + loginInfo.username);
+	for (var i = 0 ; i < players.length; i++)
+	{
+		if (players[i].name == loginInfo.username)
+		{
+			if (players[i].password == loginInfo.password)
+			{
+				config.error = 0;
+			}
+			else
+			{
+				console.log("WRONG PASSWORD " +  players[i].password + ":" + loginInfo.password); 
+			}
+		}
+	}
 
-	config.error = 0;
 	res.send(JSON.stringify(config, null, 2));
 		
 });
@@ -211,6 +225,81 @@ router.route("/changeconfig/:type/:arg1").post(function(req, res, next)
 	}
    next();
 });
+
+
+router.route("/changeplayers/:type/:arg1").post(function(req, res, next) 
+{
+	var newConfigString = req.body;
+	var newConfigObj = JSON.parse(newConfigString);
+	debug((new Date()).toString() + ": Changing Config " + newConfigString);
+
+	if (newConfigObj != null)
+	{
+		if (newConfigObj.password == players[0].password)
+		{
+			if (newConfigObj.players != undefined && newConfigObj.players.length >= 2)
+			{
+				players = newConfigObj.players;
+				fs.writeFileSync("playerEntries.json",
+					JSON.stringify(players, null, 1),
+					"utf8",
+					errorProcessing);
+				
+				res.send('SUCCESS: Players changed.');
+				
+			}
+			else
+			{
+				res.send('FAIL: missing info');
+			}
+		}
+		else
+		{
+			res.send('FAIL: Wrong password');
+		}
+	}
+   next();
+});
+
+router.route("/changebracket/:type/:arg1").post(function(req, res, next) 
+{
+	var newConfigString = req.body;
+	var newConfigObj = JSON.parse(newConfigString);
+	debug((new Date()).toString() + ": Changing Bracket " + newConfigString);
+
+	if (newConfigObj != null)
+	{
+		if (newConfigObj.password == players[0].password)
+		{
+			if (newConfigObj.bracket != undefined && newConfigObj.bracket.round1 != undefined)
+			{
+				bracket = newConfigObj.bracket;
+				fs.writeFileSync("bracket.json",
+					JSON.stringify(bracket, null, 1),
+					"utf8",
+					errorProcessing);
+				
+				res.send('SUCCESS: Bracket changed.');
+				
+			}
+			else
+			{
+				res.send('FAIL: missing info');
+			}
+		}
+		else
+		{
+			res.send('FAIL: Wrong password');
+		}
+	}
+   next();
+});
+
+
+
+
+
+
 															 
 router.route("/changeseason/:type/:arg1").post(function(req, res, next) 
 {

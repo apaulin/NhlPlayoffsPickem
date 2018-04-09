@@ -1,6 +1,11 @@
 <html>
 <head>
 <style>
+	#roundPicksDiv
+	{
+		position: absolute;
+		top: 0px;
+	}
 </style>
 <script language="javascript">
 var config = null;
@@ -13,11 +18,7 @@ var postPicksInfo = new XMLHttpRequest();
 
 var load = function()
 {
-	gebi("round1PicksDiv").style.visibility = "hidden";
-	gebi("round2PicksDiv").style.visibility = "hidden";
-	gebi("round3PicksDiv").style.visibility = "hidden";
-	gebi("round4PicksDiv").style.visibility = "hidden";
-	gebi("resultsDiv").style.visibility = "hidden";
+	gebi("roundPicksDiv").style.visibility = "hidden";
 	getLoginInfo.open("GET", "/logininfo/all/" + Math.floor(10000*Math.random()));
 	getLoginInfo.send();
 }
@@ -39,7 +40,6 @@ var login = function()
 	loginInfo = new Object();
 	loginInfo.username = gebi("usernamesSelect").value;
 	loginInfo.password = gebi("passwordText").value;
-	gebi("loginDiv").style.visibility = "hidden";
 	postLoginInfo.open("POST", "/logininfo/all/info");
 	postLoginInfo.send(JSON.stringify(loginInfo, null, 2));
 	console.log(JSON.stringify(loginInfo, null, 2));
@@ -53,9 +53,14 @@ postLoginInfo.onreadystatechange = function()
 		console.log(JSON.stringify(config, null, 2));
 		if (config.error == 0)
 		{
+			gebi("loginDiv").style.visibility = "hidden";
 			console.log("Login Successful");
 			getBracketInfo.open("GET", "/bracketinfo/all/" + + Math.floor(10000*Math.random()));
 			getBracketInfo.send();
+		}
+		else
+		{
+			alert("Wrong password");
 		}
 	}
 }
@@ -68,7 +73,7 @@ getBracketInfo.onreadystatechange = function()
 		bracket = JSON.parse(this.responseText);
 		if (config.pickPeriod == "true")
 		{
-			var roundDiv = gebi("round" + config.round + "PicksDiv");
+			var roundDiv = gebi("roundPicksDiv");
 			var round = bracket["round" + config.round];
 			roundDiv.style.visibility = "visible";
 			var t = document.createElement("table");
@@ -77,6 +82,8 @@ getBracketInfo.onreadystatechange = function()
 			c.textContent = "Matchup";
 			c = r.insertCell(-1);
 			c.textContent = "Choix / Choice";
+			c = r.insertCell(-1);
+			c.textContent = "# of Games";
 			c = r.insertCell(-1);
 			c.textContent = "Poids / Weight";
 			for(var i=0 ; i < round.matchups.length; i++)
@@ -92,7 +99,9 @@ getBracketInfo.onreadystatechange = function()
 				s.add(new Option(round.matchups[i].team2, round.matchups[i].team2));
 				c.appendChild(s);
 				c = r.insertCell(-1);
-				c.appendChild(createMatchesSelect("numberOfGames-" + config.round + "-" + i, round.matchups.length));
+				c.appendChild(createNumberOfGamesSelect("numberOfGames-" + config.round + "-" + i));
+				c = r.insertCell(-1);
+				c.appendChild(createWeigthSelect("weigthOfGame-" + config.round + "-" + i, round.matchups.length));
 				
 			}
 			
@@ -157,7 +166,7 @@ getBracketInfo.onreadystatechange = function()
 			
 		}
 		calculateResults();
-		gebi("resultsDiv").style.visibility = "visible";
+		//gebi("resultsDiv").style.visibility = "visible";
 	}
 }
 
@@ -175,6 +184,7 @@ var submitPicks = function(e)
 		var pick = new Object();
 		pick.winner = gebi("winner-" + config.round + "-" + i).value;
 		pick.numberOfGames = gebi("numberOfGames-" + config.round + "-" + i).value;
+		pick.weigthOfGame = gebi("weigthOfGame-" + config.round + "-" + i).value;
 		picks["round" + config.round].matchups.push(pick);
 		
 	}
@@ -192,7 +202,8 @@ var submitPicks = function(e)
 	}
 	else
 	{
-		console.log("Invalid Picks");
+		console.log("Invalid Picks :\n");
+		alert("Invalid Picks :\n" + validatePicks(picks));
 	}
 }
 
@@ -201,6 +212,8 @@ postPicksInfo.onreadystatechange = function()
 	if (this.readyState == 4 && this.status == 200)
 	{
 		console.log(this.responseText);
+		gebi("roundPicksDiv").innerHTML = "";
+		gebi("roundPicksDiv").innerHTML ="<textarea cols='60' rows='40'>" +  this.responseText + "</textarea>";
 	}
 
 }
@@ -214,33 +227,44 @@ var validatePicks = function(p)
 	{
 		if(m[i].winner == "")
 		{
-			ret = false;
+			ret = "Empty winner at " + (i+1);
 			console.log("Empty winner at " + (i+1));
 		}
-		if(m[i].numberOfGames == "")
+		if(m[i].numberOfGames == "" || m[i].numberOfGames == undefined)
 		{
-			ret = false;
+			ret = "Empty number of games at " + (i+1);
 			console.log("Empty number of games at " + (i+1));
 		}
-		else if (map[m[i].numberOfGames] != undefined)
+		
+		
+		if(m[i].weigthOfGame == "" || m[i].weigthOfGame == undefined)
 		{
-			ret = false;
-			console.log("Dupplicate number of games at " + (i+1));
+			ret = "Empty weigth of games at " + (i+1);
+			console.log("Empty weigth of games at " + (i+1));
+		}
+		else if (map[m[i].weigthOfGame] != undefined)
+		{
+			ret = "Dupplicate weigth of games at " + (i+1);
+			console.log("Dupplicate weigth of games at " + (i+1));
 		}
 		else
 		{
-			map[m[i].numberOfGames] = true;
+			map[m[i].weigthOfGame] = true;
 		}
 	}
 	
 	if (config.round == 1 )
 	{
-		if (p["round1"].easternFinalist == "" || 
+		if (p["round1"].easternFinalist == undefined || 
+		    p["round1"].westernFinalist == undefined || 
+			p["round1"].cupWinner == undefined ||
+			p["round1"].easternFinalist == "" || 
 		    p["round1"].westernFinalist == "" || 
-			 p["round1"].cupWinner == ""
+			p["round1"].cupWinner == ""
 		   )
 		{
-			ret = false;
+			console.log("Missing finalist of cup winner");
+			ret = "Missing finalist of cup winner";
 		}
 	}
 	
@@ -248,7 +272,7 @@ var validatePicks = function(p)
 }
 
 
-var createMatchesSelect = function(id, length)
+var createWeigthSelect = function(id, length)
 {
 	var ret = document.createElement("select");
 	ret.id = id;
@@ -259,6 +283,19 @@ var createMatchesSelect = function(id, length)
 	}
 	return ret;
 }
+
+var createNumberOfGamesSelect = function(id)
+{
+	var ret = document.createElement("select");
+	ret.id = id;
+	ret.add(new Option("", ""));
+	for(var i = 4; i <= 8; i++)
+	{
+		ret.add(new Option(i + " games",i));
+	}
+	return ret;
+}
+
 
 var calculateResults = function()
 {
@@ -277,20 +314,8 @@ var gebi = function(id)
 	<input type="text" id="passwordText" type="password" />
 	<input type="button" value="LOGIN" onclick="login();" />
 </div>
-<div id="round1PicksDiv">
+<div id="roundPicksDiv">
 	<h1>Round 1 Picks</h1>
-</div>
-<div id="round2PicksDiv">
-	<h1>Round 2 Picks</h1>
-</div>
-<div id="round3PicksDiv">
-	<h1>Round 3 Picks</h1>
-</div>
-<div id="round4PicksDiv">
-	<h1>Round 4 Picks</h1>
-</div>
-<div id="resultsDiv">
-	<h1>Results</h1>
 </div>
 
 </body>
