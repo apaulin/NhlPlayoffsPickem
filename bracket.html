@@ -31,27 +31,27 @@ getBracketInfo.onreadystatechange = function()
 				r = t.insertRow(-1);
 				c = r.insertCell(-1);
 				var text = document.createElement("input");
-				text.id = "round_" + i + "_team1";
+				text.id = "round_" + i + "_" + j + "_team1";
 				text.value = bracket["round" + i].matchups[j].team1;
 				c.appendChild(text); 
 
 				c = r.insertCell(-1);
 				text = document.createElement("input");
-				text.id = "round_" + i + "_team2";
+				text.id = "round_" + i + "_" + j + "_team2";
 				text.value = bracket["round" + i].matchups[j].team2;
 				c.appendChild(text); 
 
 
 				c = r.insertCell(-1);
 				text = document.createElement("input");
-				text.id = "round_" + i + "_winner";
+				text.id = "round_" + i + "_" + j+ "_winner";
 				text.value = bracket["round" + i].matchups[j].winner;
 				c.appendChild(text); 
 
 
 				c = r.insertCell(-1);
 				text = document.createElement("input");
-				text.id = "round_" + i + "_numberOfGames";
+				text.id = "round_" + i + "_" + j + "_numberOfGames";
 				text.value = bracket["round" + i].matchups[j].numberOfGames;
 				text.size = 3;
 				c.appendChild(text); 
@@ -98,12 +98,18 @@ var submit = function()
 	ret.bracket = bracket;
 	for(var i =1; i <= 4; i++)
 	{
-		
+		for(var j=0; j <  ret.bracket["round" + i].matchups.length; j++)
+		{
+			ret.bracket["round" + i].matchups[j].team1 = gebi("round_" + i + "_" + j +"_team1").value;
+			ret.bracket["round" + i].matchups[j].team2 = gebi("round_" + i + "_" + j+ "_team2").value;
+			ret.bracket["round" + i].matchups[j].winner = gebi("round_" + i + "_" + j+ "_winner").value;
+			ret.bracket["round" + i].matchups[j].numberOfGames = gebi("round_" + i + "_" + j+ "_numberOfGames").value;
+		}
 	}
 
-	bracket["round1"].easternFinalist = gebi("easternFinalist").value;
-	bracket["round1"].westernFinalist = gebi("westernFinalist").value;
-	bracket["round1"].cupWinner = gebi("cupWinner").value;
+	ret.bracket["round1"].easternFinalist = gebi("easternFinalist").value;
+	ret.bracket["round1"].westernFinalist = gebi("westernFinalist").value;
+	ret.bracket["round1"].cupWinner = gebi("cupWinner").value;
 
 	setBracketInfo.open("POST", "/changebracket/all/null");
 	setBracketInfo.send(JSON.stringify(ret, null,2));

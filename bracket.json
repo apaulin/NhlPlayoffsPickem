@@ -3,51 +3,51 @@
   "matchups": [
    {
     "team1": "Tampa Bay",
-    "team2": "Philadelphia",
+    "team2": "New Jersey",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "Boston",
     "team2": "Toronto",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "Washington",
-    "team2": "New Jersey",
+    "team2": "Columbus",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "Pittsburgh",
-    "team2": "Columbus",
+    "team2": "Philadelphia",
     "winner": "",
-    "numberOfGames": 0
-   },
-   {
-    "team1": "Vegas",
-    "team2": "Anaheim",
-    "winner": "",
-    "numberOfGames": 0
-   },
-   {
-    "team1": "San Jose",
-    "team2": "Los Angeles",
-    "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "Nashville",
     "team2": "Colorado",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "Winnipeg",
     "team2": "Minnesota",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
+   },
+   {
+    "team1": "Vegas",
+    "team2": "Los Angeles",
+    "winner": "",
+    "numberOfGames": "0"
+   },
+   {
+    "team1": "Anaheim",
+    "team2": "San Jose",
+    "winner": "",
+    "numberOfGames": "0"
    }
   ],
   "easternFinalist": "",
@@ -60,25 +60,25 @@
     "team1": "",
     "team2": "",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "",
     "team2": "",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "",
     "team2": "",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "",
     "team2": "",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    }
   ]
  },
@@ -88,13 +88,13 @@
     "team1": "",
     "team2": "",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    },
    {
     "team1": "",
     "team2": "",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    }
   ]
  },
@@ -104,7 +104,7 @@
     "team1": "",
     "team2": "",
     "winner": "",
-    "numberOfGames": 0
+    "numberOfGames": "0"
    }
   ]
  }

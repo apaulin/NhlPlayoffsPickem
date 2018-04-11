@@ -289,7 +289,7 @@ var createNumberOfGamesSelect = function(id)
 	var ret = document.createElement("select");
 	ret.id = id;
 	ret.add(new Option("", ""));
-	for(var i = 4; i <= 8; i++)
+	for(var i = 4; i < 8; i++)
 	{
 		ret.add(new Option(i + " games",i));
 	}
