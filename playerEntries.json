@@ -7,53 +7,6 @@
  {
   "name": "Souha Al-Sawda",
   "payed": "No",
-  "round1": {
-   "matchups": [
-    {
-     "winner": "Tampa Bay",
-     "numberOfGames": "6",
-     "weigthOfGame": "5"
-    },
-    {
-     "winner": "Toronto",
-     "numberOfGames": "6",
-     "weigthOfGame": "6"
-    },
-    {
-     "winner": "Washington",
-     "numberOfGames": "5",
-     "weigthOfGame": "4"
-    },
-    {
-     "winner": "Columbus",
-     "numberOfGames": "7",
-     "weigthOfGame": "3"
-    },
-    {
-     "winner": "Anaheim",
-     "numberOfGames": "6",
-     "weigthOfGame": "1"
-    },
-    {
-     "winner": "San Jose",
-     "numberOfGames": "6",
-     "weigthOfGame": "2"
-    },
-    {
-     "winner": "Nashville",
-     "numberOfGames": "8",
-     "weigthOfGame": "7"
-    },
-    {
-     "winner": "Minnesota",
-     "numberOfGames": "8",
-     "weigthOfGame": "8"
-    }
-   ],
-   "easternFinalist": "Philadelphia",
-   "westernFinalist": "Los Angeles",
-   "cupWinner": "Pittsburgh"
-  },
   "password": "tomaterouge"
  },
  {
@@ -599,7 +552,54 @@
  {
   "name": "Jason Sagan",
   "payed": "No",
-  "password": "password"
+  "password": "password",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "5",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Boston",
+     "numberOfGames": "6",
+     "weigthOfGame": "1"
+    },
+    {
+     "winner": "Washington",
+     "numberOfGames": "5",
+     "weigthOfGame": "4"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "7",
+     "weigthOfGame": "3"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "4",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "6"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "5"
+    },
+    {
+     "winner": "San Jose",
+     "numberOfGames": "6",
+     "weigthOfGame": "2"
+    }
+   ],
+   "easternFinalist": "Tampa Bay",
+   "westernFinalist": "Nashville",
+   "cupWinner": "Nashville"
+  }
  },
  {
   "name": "Sarah Woolverton",
