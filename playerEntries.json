@@ -7,12 +7,106 @@
  {
   "name": "Souha Al-Sawda",
   "payed": "No",
-  "password": "tomaterouge"
+  "password": "tomaterouge",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "7",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Toronto",
+     "numberOfGames": "7",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "6"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "6",
+     "weigthOfGame": "5"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "5",
+     "weigthOfGame": "4"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "3"
+    },
+    {
+     "winner": "Los Angeles",
+     "numberOfGames": "7",
+     "weigthOfGame": "2"
+    },
+    {
+     "winner": "Anaheim",
+     "numberOfGames": "5",
+     "weigthOfGame": "1"
+    }
+   ],
+   "easternFinalist": "Washington",
+   "westernFinalist": "Nashville",
+   "cupWinner": "Washington"
+  }
  },
  {
   "name": "Martin Audet",
   "payed": "Yes",
-  "password": "ocrakiacoke"
+  "password": "ocrakiacoke",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "5",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Boston",
+     "numberOfGames": "6",
+     "weigthOfGame": "5"
+    },
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "6"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "7",
+     "weigthOfGame": "4"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "5",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "7",
+     "weigthOfGame": "3"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "2"
+    },
+    {
+     "winner": "Anaheim",
+     "numberOfGames": "7",
+     "weigthOfGame": "1"
+    }
+   ],
+   "easternFinalist": "Tampa Bay",
+   "westernFinalist": "Nashville",
+   "cupWinner": "Nashville"
+  }
  },
  {
   "name": "Eric Bertrand",
@@ -329,14 +423,113 @@
  {
   "name": "Hamza Halli",
   "payed": "No",
-  "password": ""
+  "password": "",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "5",
+     "weigthOfGame": "6"
+    },
+    {
+     "winner": "Toronto",
+     "numberOfGames": "7",
+     "weigthOfGame": "1"
+    },
+    {
+     "winner": "Washington",
+     "numberOfGames": "4",
+     "weigthOfGame": "5"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "4",
+     "weigthOfGame": "4"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "3"
+    },
+    {
+     "winner": "San Jose",
+     "numberOfGames": "7",
+     "weigthOfGame": "2"
+    }
+   ],
+   "easternFinalist": "Pittsburgh",
+   "westernFinalist": "Nashville",
+   "cupWinner": "Nashville"
+  }
  },
  {
   "name": "Brian Hubbs",
   "payed": "No",
-  "password": "scoreboard"
+  "password": "scoreboard",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "4"
+    },
+    {
+     "winner": "Toronto",
+     "numberOfGames": "7",
+     "weigthOfGame": "2"
+    },
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "6",
+     "weigthOfGame": "6"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "7",
+     "weigthOfGame": "1"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "5"
+    },
+    {
+     "winner": "San Jose",
+     "numberOfGames": "7",
+     "weigthOfGame": "3"
+    }
+   ],
+   "easternFinalist": "Tampa Bay",
+   "westernFinalist": "Nashville",
+   "cupWinner": "Tampa Bay"
+  }
  },
  {
+  "name": "Terry Koubakis",
+  "payed": "No",
+  "password": "tk"
+},
+{
   "name": "Dany Lemieux",
   "payed": "No",
   "password": "ynad",
@@ -651,6 +844,53 @@
  {
   "name": "Sarah Woolverton",
   "payed": "No",
-  "password": "fox"
+  "password": "fox",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "3"
+    },
+    {
+     "winner": "Boston",
+     "numberOfGames": "5",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Columbus",
+     "numberOfGames": "4",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "6",
+     "weigthOfGame": "6"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "6",
+     "weigthOfGame": "4"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "7",
+     "weigthOfGame": "5"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "7",
+     "weigthOfGame": "2"
+    },
+    {
+     "winner": "San Jose",
+     "numberOfGames": "5",
+     "weigthOfGame": "1"
+    }
+   ],
+   "easternFinalist": "Boston",
+   "westernFinalist": "Vegas",
+   "cupWinner": "Vegas"
+  }
  }
 ]
