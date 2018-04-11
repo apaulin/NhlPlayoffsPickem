@@ -34,6 +34,10 @@
 	{
 		background-color: #FF8888;
 	}
+	.weigthOfGame
+	{
+		background-color: #aaaaff;
+	}
 </style>
 <script language="javascript">
 var config = null;
@@ -371,6 +375,7 @@ var displayResults = function()
 			c = r.insertCell(-1);
 			c.className = "matchupHeader";
 			c.textContent = bracket["round" + j].matchups[k].team1 + " vs. " + bracket["round" + j].matchups[k].team2;
+			c.colSpan = 3;
 		}
 		for(var i = 0; i < currentPicks.length; i++)
 		{
@@ -383,7 +388,7 @@ var displayResults = function()
 				{
 					var m = currentPicks[i]["round" + j].matchups[k];
 					c = r.insertCell(-1);
-					c.textContent = m.winner + " : " + m.numberOfGames+ " : " + m.weigthOfGame;
+					c.textContent = m.winner;
 					if (bracket["round" + j].matchups[k].winner == undefined || bracket["round" + j].matchups[k].winner == "")
 					{
 						c.className = "noChoice";
@@ -396,6 +401,25 @@ var displayResults = function()
 					{
 						c.className = "badChoice";
 					}
+
+					c = r.insertCell(-1);
+					c.textContent = m.numberOfGames;
+					if (bracket["round" + j].matchups[k].winner == undefined || bracket["round" + j].matchups[k].winner == "" || bracket["round" + j].matchups[k].numberOfGames == 0)
+					{
+						c.className = "noChoice";
+					}
+					else if (m.numberOfGames == bracket["round" + j].matchups[k].numberOfGames)
+					{
+						c.className = "goodChoice";
+					}
+					else
+					{
+						c.className = "badChoice";
+					}
+
+					c = r.insertCell(-1);
+					c.textContent = m.weigthOfGame;
+					c.className = "weigthOfGame";
 				}
 			}
 		}
@@ -415,6 +439,7 @@ var displayResults = function()
 		if(currentPicks[i].round1 != undefined && currentPicks[i].round1.easternFinalist != undefined)
 		{
 			c = r.insertCell(-1);
+			c.colSpan = 3;
 			c.textContent = currentPicks[i].round1.easternFinalist;
 			if (bracket.round1.easternFinalist == "")
 			{
@@ -429,6 +454,7 @@ var displayResults = function()
 				c.className = "badChoice";
 			}
 			c = r.insertCell(-1);
+			c.colSpan = 3;
 			c.textContent = currentPicks[i].round1.westernFinalist;
 			if (bracket.round1.westernFinalist == "")
 			{
@@ -443,6 +469,7 @@ var displayResults = function()
 				c.className = "badChoice";
 			}
 			c = r.insertCell(-1);
+			c.colSpan = 3;
 			c.textContent = currentPicks[i].round1.cupWinner;
 			if (bracket.round1.cupWinner == "")
 			{
