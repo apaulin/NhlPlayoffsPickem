@@ -3,14 +3,44 @@
 <style>
 	#roundPicksDiv
 	{
-		position: absolute;
 		top: 0px;
+	}
+	
+	.roundTitle
+	{
+		background-color: #aaaaff;
+		font-size: 24px;
+	}
+	.roundTitle2
+	{
+		background-color: #aaaaff;
+		font-size: 12px;
+	}
+	.matchupHeader
+	{
+		background-color: #aaaaff;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.noChoice
+	{
+		background-color: #888888;
+	}
+	.goodChoice
+	{
+		background-color: #88FF88;
+	}
+	.badChoice
+	{
+		background-color: #FF8888;
 	}
 </style>
 <script language="javascript">
 var config = null;
 var bracket = null;
 var loginInfo = null;
+var currentPicks = null;
+var currentPlayer = null;
 var getLoginInfo = new XMLHttpRequest();
 var postLoginInfo = new XMLHttpRequest();
 var getBracketInfo = new XMLHttpRequest();
@@ -49,12 +79,21 @@ postLoginInfo.onreadystatechange = function()
 {
 	if (this.readyState == 4 && this.status == 200)
 	{
-		config = JSON.parse(this.responseText);
-		console.log(JSON.stringify(config, null, 2));
-		if (config.error == 0)
+		var loginResponse  = JSON.parse(this.responseText);
+		console.log(JSON.stringify(loginResponse, null, 2));
+		config = loginResponse.config;
+		if (loginResponse.error == 0)
 		{
 			gebi("loginDiv").style.visibility = "hidden";
 			console.log("Login Successful");
+			currentPicks = loginResponse.players;
+			for(var i=0; i < currentPicks.length; i++)
+			{
+				if (currentPicks[i].name == loginInfo.username)
+				{
+					currentPlayer = currentPicks[i];
+				}
+			}
 			getBracketInfo.open("GET", "/bracketinfo/all/" + + Math.floor(10000*Math.random()));
 			getBracketInfo.send();
 		}
@@ -71,7 +110,7 @@ getBracketInfo.onreadystatechange = function()
 	{
 		console.log("Received Bracket info");
 		bracket = JSON.parse(this.responseText);
-		if (config.pickPeriod == "true")
+		if (config.pickPeriod == true)
 		{
 			var roundDiv = gebi("roundPicksDiv");
 			var round = bracket["round" + config.round];
@@ -88,6 +127,12 @@ getBracketInfo.onreadystatechange = function()
 			c.textContent = "Poids / Weight";
 			for(var i=0 ; i < round.matchups.length; i++)
 			{
+				var matchup = null;
+				if (currentPlayer["round" + config.round] != undefined &&
+				    currentPlayer["round" + config.round].matchups[i] != undefined)
+				{
+					matchup = currentPlayer["round" + config.round].matchups[i];
+				}
 				r = t.insertRow(-1)
 				c = r.insertCell(-1);
 				c.textContent = "Matchup #" + (i+1) + " : " + round.matchups[i].team1 + " vs. " + round.matchups[i].team2;
@@ -97,11 +142,16 @@ getBracketInfo.onreadystatechange = function()
 				s.add(new Option("", ""));
 				s.add(new Option(round.matchups[i].team1, round.matchups[i].team1));
 				s.add(new Option(round.matchups[i].team2, round.matchups[i].team2));
+				if (matchup != null) s.value = matchup.winner;
 				c.appendChild(s);
 				c = r.insertCell(-1);
-				c.appendChild(createNumberOfGamesSelect("numberOfGames-" + config.round + "-" + i));
+				s = createNumberOfGamesSelect("numberOfGames-" + config.round + "-" + i);
+				c.appendChild(s);
+				if (matchup != null) s.value = matchup.numberOfGames;
 				c = r.insertCell(-1);
-				c.appendChild(createWeigthSelect("weigthOfGame-" + config.round + "-" + i, round.matchups.length));
+				s = createWeigthSelect("weigthOfGame-" + config.round + "-" + i, round.matchups.length);
+				c.appendChild(s);
+				if (matchup != null) s.value = matchup.weigthOfGame;
 				
 			}
 			
@@ -120,6 +170,7 @@ getBracketInfo.onreadystatechange = function()
 					s.add(new Option(round.matchups[i].team2, round.matchups[i].team2));
 				}
 				c.appendChild(s);
+				if (currentPlayer.round1 != undefined && currentPlayer.round1.easternFinalist != undefined) s.value = currentPlayer.round1.easternFinalist;
 				c = r.insertCell(-1);
 				c.textContent = "5 pts";
 				r = t.insertRow(-1);
@@ -135,6 +186,7 @@ getBracketInfo.onreadystatechange = function()
 					s.add(new Option(round.matchups[i].team2, round.matchups[i].team2));
 				}
 				c.appendChild(s);
+				if (currentPlayer.round1 != undefined && currentPlayer.round1.westernFinalist != undefined) s.value = currentPlayer.round1.westernFinalist;
 				c = r.insertCell(-1);
 				c.textContent = "5 pts";
 				r = t.insertRow(-1);
@@ -150,6 +202,7 @@ getBracketInfo.onreadystatechange = function()
 					s.add(new Option(round.matchups[i].team2, round.matchups[i].team2));
 				}
 				c.appendChild(s);
+				if (currentPlayer.round1 != undefined && currentPlayer.round1.cupWinner != undefined) s.value = currentPlayer.round1.cupWinner;
 				c = r.insertCell(-1);
 				c.textContent = "10 pts";
 			}
@@ -165,7 +218,7 @@ getBracketInfo.onreadystatechange = function()
 			roundDiv.appendChild(t);
 			
 		}
-		calculateResults();
+		displayResults();
 		//gebi("resultsDiv").style.visibility = "visible";
 	}
 }
@@ -297,9 +350,191 @@ var createNumberOfGamesSelect = function(id)
 }
 
 
+var displayResults = function()
+{
+	calculateResults();
+	var t = gebi("resultsTable");
+	for (var j=1; j <= 4; j++)
+	{
+		var r = t.insertRow(-1);
+		var c = r.insertCell(-1);
+		c.className = "roundTitle"; 
+		c.textContent = "Round #" + j;
+		c = r.insertCell(-1);
+		c.className = "roundTitle2"; 
+		c.colSpan = 8;
+		c.textContent = "(Winner : Number of Games : Weight of Matchup)";
+		r = t.insertRow(-1);
+		c = r.insertCell(-1);
+		for(var k =0 ; k < bracket["round" + j].matchups.length; k++)
+		{
+			c = r.insertCell(-1);
+			c.className = "matchupHeader";
+			c.textContent = bracket["round" + j].matchups[k].team1 + " vs. " + bracket["round" + j].matchups[k].team2;
+		}
+		for(var i = 0; i < currentPicks.length; i++)
+		{
+			r = t.insertRow(-1);
+			c = r.insertCell(-1);
+			c.textContent = currentPicks[i].name + "(" + currentPicks[i].points + " points)";
+			if (currentPicks[i]["round" + j] != undefined)
+			{
+				for(var k =0 ; k < currentPicks[i]["round" + j].matchups.length; k++)
+				{
+					var m = currentPicks[i]["round" + j].matchups[k];
+					c = r.insertCell(-1);
+					c.textContent = m.winner + " : " + m.numberOfGames+ " : " + m.weigthOfGame;
+					if (bracket["round" + j].matchups[k].winner == undefined || bracket["round" + j].matchups[k].winner == "")
+					{
+						c.className = "noChoice";
+					}
+					else if (m.winner == bracket["round" + j].matchups[k].winner)
+					{
+						c.className = "goodChoice";
+					}
+					else
+					{
+						c.className = "badChoice";
+					}
+				}
+			}
+		}
+	}
+	
+	//Display finalist and cup winner picks
+	var r = t.insertRow(-1);
+	var c = r.insertCell(-1);
+	c.colSpan = 4;
+	c.textContent = "Finalists And Cup Winner";
+	c.className = "roundTitle"; 
+	for(var i = 0; i < currentPicks.length; i++)
+	{
+		var r = t.insertRow(-1);
+		var c = r.insertCell(-1);
+		c.textContent = currentPicks[i].name;
+		if(currentPicks[i].round1 != undefined && currentPicks[i].round1.easternFinalist != undefined)
+		{
+			c = r.insertCell(-1);
+			c.textContent = currentPicks[i].round1.easternFinalist;
+			if (bracket.round1.easternFinalist == "")
+			{
+				c.className = "noChoice";
+			}
+			else if (currentPicks[i].round1.easternFinalist == bracket.round1.easternFinalist)
+			{
+				c.className = "goodChoice";
+			}
+			else
+			{
+				c.className = "badChoice";
+			}
+			c = r.insertCell(-1);
+			c.textContent = currentPicks[i].round1.westernFinalist;
+			if (bracket.round1.westernFinalist == "")
+			{
+				c.className = "noChoice";
+			}
+			else if (currentPicks[i].round1.westernFinalist == bracket.round1.westernFinalist)
+			{
+				c.className = "goodChoice";
+			}
+			else
+			{
+				c.className = "badChoice";
+			}
+			c = r.insertCell(-1);
+			c.textContent = currentPicks[i].round1.cupWinner;
+			if (bracket.round1.cupWinner == "")
+			{
+				c.className = "noChoice";
+			}
+			else if (currentPicks[i].round1.cupWinner == bracket.round1.cupWinner)
+			{
+				c.className = "goodChoice";
+			}
+			else
+			{
+				c.className = "badChoice";
+			}
+		}
+	}
+	
+	
+	
+	
+}
+
 var calculateResults = function()
 {
+
+	for(var i = 0; i < currentPicks.length; i++)
+	{
+		currentPicks[i].points = 0;
+		
+		for (var j=1; j <= 4; j++)
+		{
+			for(var k =0 ; k < bracket["round" + j].matchups.length; k++)
+			{
+				try
+				{
+					var m = currentPicks[i]["round" + j].matchups[k];
+					if (m.winner == bracket["round" + j].matchups[k].winner)
+					{
+						currentPicks[i].points += (m.weigthOfGame - 0);
+						if (m.numberOfGames == bracket["round" + j].matchups[k].numberOfGames)
+						{
+							currentPicks[i].points += 2;
+						}
+					}
+				}
+				catch(e)
+				{
+					console.log("Skipping " + currentPicks[i].name + " round " + j + "matchup " + k);
+				}
+			}
+		}
+		
+		try
+		{
+			if (currentPicks[i].round1.easternFinalist == bracket.round1.easternFinalist)
+			{
+				currentPicks[i].points += 5;
+			}
+			if (currentPicks[i].round1.westernFinalist == bracket.round1.westernFinalist)
+			{
+				currentPicks[i].points += 5;
+			}
+			if (currentPicks[i].round1.cupWinner == bracket.round1.cupWinner)
+			{
+				currentPicks[i].points += 10;
+			}
+		}
+		catch (e)
+		{
+			console.log("Skipping finalist for " + currentPicks[i].name);
+		}
+	}	
+
+
+	// lets sort all of this
+	for(var i=0; i < currentPicks.length; i++)
+	{
+		for(var j=i+1; j < currentPicks.length; j++)
+		{
+			var temp = null;
+			if (currentPicks[i].points < currentPicks[j].points)
+			{
+				temp = currentPicks[i];
+				currentPicks[i] = currentPicks[j];
+				currentPicks[j] = temp;
+				temp = null;
+			}
+		}
+	}
+	
 }
+
+
 
 var gebi = function(id)
 {
@@ -316,6 +551,11 @@ var gebi = function(id)
 </div>
 <div id="roundPicksDiv">
 	<h1>Round 1 Picks</h1>
+</div>
+<div id="resultsDiv">
+Results
+<table id="resultsTable">
+</table>
 </div>
 
 </body>

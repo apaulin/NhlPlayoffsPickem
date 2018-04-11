@@ -117,8 +117,10 @@ router.route("/logininfo/:username/:password").post(function(req, res, next)
 {
 	var loginInfoString = req.body;
 	var loginInfo = JSON.parse(loginInfoString);
+	var returnInfo = new Object();
 
-	config.error = -1;
+	returnInfo.config = config;
+	returnInfo.error = -1;
 	debug("GET Login Attempt from " + loginInfo.username);
 	for (var i = 0 ; i < players.length; i++)
 	{
@@ -126,7 +128,26 @@ router.route("/logininfo/:username/:password").post(function(req, res, next)
 		{
 			if (players[i].password == loginInfo.password)
 			{
-				config.error = 0;
+				returnInfo.error = 0;
+				returnInfo.players = new Array();
+				for(var j = 1; j < players.length; j++)
+				{
+					var p = new Object();
+					p.name = players[j].name;
+					p.payed = players[j].payed;
+					var endRound = config.round;
+					if (config.pickPeriod == true && players[j].name != players[i].name)
+					{
+						console.log("In picking period, removing 1 round.");
+						endRound--;
+					}
+					for(var k=1; k <= endRound; k++)
+					{
+						p["round" + k] = players[j]["round" + k]
+					}
+					returnInfo.players.push(p);
+					
+				}
 			}
 			else
 			{
@@ -135,7 +156,7 @@ router.route("/logininfo/:username/:password").post(function(req, res, next)
 		}
 	}
 
-	res.send(JSON.stringify(config, null, 2));
+	res.send(JSON.stringify(returnInfo, null, 2));
 		
 });
 
@@ -150,7 +171,7 @@ router.route("/picksinfo/:type/:arg1").post(function(req, res, next)
 	var picksInfoString = req.body;
 	var picksInfo = JSON.parse(picksInfoString);
 	var currentPlayer = null;
-	if (config.pickPeriod == "true")
+	if (config.pickPeriod == true)
 	{
 		for(var i=0; i < players.length && currentPlayer == null; i++)
 		{

@@ -33,7 +33,14 @@ var submit = function()
 	var ret = new Object();
 	ret.password = gebi("passwordText").value;
 	ret.config = config;
-	ret.config.pickPeriod = gebi("periodSelect").value;
+	if (gebi("periodSelect").value == "true")
+	{
+		ret.config.pickPeriod = true;
+	}
+	else
+	{
+		ret.config.pickPeriod = false;
+	}
 	ret.config.round = gebi("roundSelect").value;
 	setConfigInfo.open("POST", "/changeconfig/all/null");
 	setConfigInfo.send(JSON.stringify(ret, null,2));

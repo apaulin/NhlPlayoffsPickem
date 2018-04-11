@@ -173,7 +173,7 @@
  {
   "name": "Andre Charette",
   "payed": "No",
-  "password": "",
+  "password": "Piano",
   "round1": {
    "matchups": [
     {
@@ -391,7 +391,54 @@
  {
   "name": "Michel Lessard",
   "payed": "No",
-  "password": "denis"
+  "password": "denis",
+  "round1": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "5",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Boston",
+     "numberOfGames": "6",
+     "weigthOfGame": "6"
+    },
+    {
+     "winner": "Columbus",
+     "numberOfGames": "7",
+     "weigthOfGame": "3"
+    },
+    {
+     "winner": "Pittsburgh",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Nashville",
+     "numberOfGames": "6",
+     "weigthOfGame": "4"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "7",
+     "weigthOfGame": "5"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "7",
+     "weigthOfGame": "2"
+    },
+    {
+     "winner": "Anaheim",
+     "numberOfGames": "7",
+     "weigthOfGame": "1"
+    }
+   ],
+   "easternFinalist": "Pittsburgh",
+   "westernFinalist": "Vegas",
+   "cupWinner": "Pittsburgh"
+  }
  },
  {
   "name": "Ted Knowles",
@@ -463,13 +510,13 @@
     },
     {
      "winner": "Washington",
-     "numberOfGames": "5",
-     "weigthOfGame": "5"
+     "numberOfGames": "6",
+     "weigthOfGame": "4"
     },
     {
      "winner": "Pittsburgh",
-     "numberOfGames": "6",
-     "weigthOfGame": "4"
+     "numberOfGames": "5",
+     "weigthOfGame": "5"
     },
     {
      "winner": "Nashville",
@@ -494,7 +541,7 @@
    ],
    "easternFinalist": "Pittsburgh",
    "westernFinalist": "Nashville",
-   "cupWinner": "Pittsburgh"
+   "cupWinner": "Nashville"
   }
  },
  {
