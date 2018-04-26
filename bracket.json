@@ -4,50 +4,50 @@
    {
     "team1": "Tampa Bay",
     "team2": "New Jersey",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Tampa Bay",
+    "numberOfGames": "5"
    },
    {
     "team1": "Boston",
     "team2": "Toronto",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Boston",
+    "numberOfGames": "7"
    },
    {
     "team1": "Washington",
     "team2": "Columbus",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Washington",
+    "numberOfGames": "6"
    },
    {
     "team1": "Pittsburgh",
     "team2": "Philadelphia",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Pittsburgh",
+    "numberOfGames": "6"
    },
    {
     "team1": "Nashville",
     "team2": "Colorado",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Nashville",
+    "numberOfGames": "6"
    },
    {
     "team1": "Winnipeg",
     "team2": "Minnesota",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Winnipeg",
+    "numberOfGames": "5"
    },
    {
     "team1": "Vegas",
     "team2": "Los Angeles",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Vegas",
+    "numberOfGames": "4"
    },
    {
     "team1": "Anaheim",
     "team2": "San Jose",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "San Jose",
+    "numberOfGames": "4"
    }
   ],
   "easternFinalist": "",
@@ -57,26 +57,26 @@
  "round2": {
   "matchups": [
    {
-    "team1": "",
-    "team2": "",
+    "team1": "Tampa Bay",
+    "team2": "Boston",
     "winner": "",
     "numberOfGames": "0"
    },
    {
-    "team1": "",
-    "team2": "",
+    "team1": "Washington",
+    "team2": "Pittsburgh",
     "winner": "",
     "numberOfGames": "0"
    },
    {
-    "team1": "",
-    "team2": "",
+    "team1": "Nashville",
+    "team2": "Winnipeg",
     "winner": "",
     "numberOfGames": "0"
    },
    {
-    "team1": "",
-    "team2": "",
+    "team1": "Vegas",
+    "team2": "San Jose",
     "winner": "",
     "numberOfGames": "0"
    }

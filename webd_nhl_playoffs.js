@@ -20,14 +20,14 @@ var bracket = null;
 var transporter = null;
 
 var endPhrases = new Array(
-	"I think I have been hacked.  Those can't possibly be your choices.  Someone must really wants to put a joke on you to submit these to your name!",
-	"I am looking at these choices and I cannot stop laughing!!!",
-	"Maybe next year you should enroll in a golf Pickem!!",
-	"Well that 10$ did not last long...  Maybe next year...",
-	//"You can change these picks until Thursday noon.  I strongly recommend that you do!",
-	//"Mppffffftttt, mppffffftttt, mppffffftttt  POUHAHAHAHAHAHAAHA!!!!!  Those are f-u-n-n-y!!!!!\nThank you for that, my day was boring so far.",
-	//"Are you picking your teams because you like their shirt color?  Sure looks like it...",
-	//"Reminder, the goal of this game is to finish on top.  Looking at your picks, I figured you didn't know that.",
+	//"I think I have been hacked.  Those can't possibly be your choices.  Someone must really wants to put a joke on you to submit these to your name!",
+	//"I am looking at these choices and I cannot stop laughing!!!",
+	//"Maybe next year you should enroll in a golf Pickem!!",
+	//"Well that 10$ did not last long...  Maybe next year...",
+	"You can change these picks until Thursday 18:30.  I strongly recommend that you do!",
+	"Mppffffftttt, mppffffftttt, mppffffftttt  POUHAHAHAHAHAHAAHA!!!!!  Those are f-u-n-n-y!!!!!\nThank you for that, my day was boring so far.",
+	"Are you picking your teams because you like their shirt color?  Sure looks like it...",
+	"Reminder, the goal of this game is to finish on top.  Looking at your picks, I figured you didn't know that.",
 	//"You could at least make the effort of looking at the screen while making your picks!",
 	//"I hope you at least have a great personality...",
 	//"If your place in society was based based on these choices, you would have to go to jail.  These are a crime against hockey!!!!!!",
@@ -43,6 +43,19 @@ var endPhrases = new Array(
 );
 
 var endPhrasesPerso = [
+	{ 
+		name: "Andre Charette",
+		phrases: ["Une chance qu'il n'y a pas le feature avec les dessins qui bouge, il aurait fallu t'installer un écran à gauche pour voir le tien!!!"]
+	},
+	{ 
+		name: "Martin Audet",
+		phrases: ["Avec des picks comme ça, fais comme si ton cou est un dual-rotator, tourne la tête pis ne regarde pas les résultats..."]
+	},
+	{ 
+		name: "Brian Hubbs",
+		phrases: ["You shouldn't let your wife make your picks for you...  She maybe Canadian but she's from Toronto!"]
+	}
+
 ];
 
 

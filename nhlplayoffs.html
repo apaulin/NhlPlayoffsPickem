@@ -38,6 +38,11 @@
 	{
 		background-color: #aaaaff;
 	}
+	input[type=button]
+	{
+		background-color: #CCFFCC;
+		font-size: 24px;
+	}
 </style>
 <script language="javascript">
 var config = null;
@@ -216,7 +221,7 @@ getBracketInfo.onreadystatechange = function()
 			var b = document.createElement("input");
 			b.type = "button";
 			b.addEventListener("click", submitPicks);
-			b.value = "Submit Picks";
+			b.value = "Click Here to Submit Picks!!!";
 			c.appendChild(b);
 			
 			roundDiv.appendChild(t);
@@ -577,7 +582,7 @@ var gebi = function(id)
 	<input type="button" value="LOGIN" onclick="login();" />
 </div>
 <div id="roundPicksDiv">
-	<h1>Round 1 Picks</h1>
+	<h1>Round 2 Picks</h1>
 </div>
 <div id="resultsDiv">
 Results
