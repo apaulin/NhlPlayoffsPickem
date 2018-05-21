@@ -78,6 +78,20 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "7",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -152,6 +166,20 @@
      "winner": "San Jose",
      "numberOfGames": "5",
      "weigthOfGame": "5"
+    }
+   ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
     }
    ]
   }
@@ -230,6 +258,20 @@
      "weigthOfGame": "6"
     }
    ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -299,6 +341,20 @@
      "winner": "Nashville",
      "numberOfGames": "5",
      "weigthOfGame": "6"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    }
+   ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
     },
     {
      "winner": "Vegas",
@@ -434,6 +490,20 @@
      "weigthOfGame": "6"
     }
    ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    }
+   ]
   }
  },
  {
@@ -510,6 +580,20 @@
      "weigthOfGame": "5"
     }
    ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    }
+   ]
   }
  },
  {
@@ -584,6 +668,20 @@
      "winner": "Vegas",
      "numberOfGames": "6",
      "weigthOfGame": "5"
+    }
+   ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
     }
    ]
   }
@@ -890,6 +988,20 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "5",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    }
+   ]
   }
  },
  {
@@ -963,6 +1075,20 @@
     {
      "winner": "Vegas",
      "numberOfGames": "6",
+     "weigthOfGame": "7"
+    }
+   ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "7",
      "weigthOfGame": "7"
     }
    ]
@@ -1042,6 +1168,20 @@
      "weigthOfGame": "8"
     }
    ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    }
+   ]
   }
  },
  {
@@ -1118,6 +1258,20 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "5",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "5",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -1192,6 +1346,20 @@
      "winner": "San Jose",
      "numberOfGames": "6",
      "weigthOfGame": "5"
+    }
+   ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Tampa Bay",
+     "numberOfGames": "5",
+     "weigthOfGame": "8"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "7",
+     "weigthOfGame": "7"
     }
    ]
   }
@@ -1343,6 +1511,20 @@
     {
      "winner": "San Jose",
      "numberOfGames": "5",
+     "weigthOfGame": "8"
+    }
+   ]
+  },
+  "round3": {
+   "matchups": [
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "7"
+    },
+    {
+     "winner": "Winnipeg",
+     "numberOfGames": "7",
      "weigthOfGame": "8"
     }
    ]

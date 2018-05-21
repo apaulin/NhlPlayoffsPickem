@@ -1,4 +1,9 @@
 {
+ "alive": [
+  "Washington",
+  "Tampa Bay",
+  "Vegas"
+ ],
  "round1": {
   "matchups": [
    {
@@ -59,42 +64,42 @@
    {
     "team1": "Tampa Bay",
     "team2": "Boston",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Tampa Bay",
+    "numberOfGames": "5"
    },
    {
     "team1": "Washington",
     "team2": "Pittsburgh",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Washington",
+    "numberOfGames": "6"
    },
    {
     "team1": "Nashville",
     "team2": "Winnipeg",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Winnipeg",
+    "numberOfGames": "7"
    },
    {
     "team1": "Vegas",
     "team2": "San Jose",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Vegas",
+    "numberOfGames": "6"
    }
   ]
  },
  "round3": {
   "matchups": [
    {
-    "team1": "",
-    "team2": "",
-    "winner": "",
+    "team1": "Washington",
+    "team2": "Tampa Bay",
+    "winner": "Tampa Bay",
     "numberOfGames": "0"
    },
    {
-    "team1": "",
-    "team2": "",
-    "winner": "",
-    "numberOfGames": "0"
+    "team1": "Winnipeg",
+    "team2": "Vegas",
+    "winner": "Vegas",
+    "numberOfGames": "5"
    }
   ]
  },

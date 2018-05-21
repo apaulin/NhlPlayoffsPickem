@@ -363,15 +363,17 @@ var displayResults = function()
 {
 	calculateResults();
 	var t = gebi("resultsTable");
-	for (var j=1; j <= 4; j++)
+	var order = new Array(3, 2, 1);
+	for (var l=0; l < order.length; l++)
 	{
+		var j = order[l];
 		var r = t.insertRow(-1);
 		var c = r.insertCell(-1);
 		c.className = "roundTitle"; 
 		c.textContent = "Round #" + j;
 		c = r.insertCell(-1);
 		c.className = "roundTitle2"; 
-		c.colSpan = 8;
+		c.colSpan = 15;
 		c.textContent = "(Winner : Number of Games : Weight of Matchup)";
 		r = t.insertRow(-1);
 		c = r.insertCell(-1);
@@ -413,7 +415,7 @@ var displayResults = function()
 					{
 						c.className = "noChoice";
 					}
-					else if (m.numberOfGames == bracket["round" + j].matchups[k].numberOfGames)
+					else if (m.numberOfGames == bracket["round" + j].matchups[k].numberOfGames && m.winner == bracket["round" + j].matchups[k].winner)
 					{
 						c.className = "goodChoice";
 					}
@@ -433,7 +435,7 @@ var displayResults = function()
 	//Display finalist and cup winner picks
 	var r = t.insertRow(-1);
 	var c = r.insertCell(-1);
-	c.colSpan = 4;
+	c.colSpan = 8;
 	c.textContent = "Finalists And Cup Winner";
 	c.className = "roundTitle"; 
 	for(var i = 0; i < currentPicks.length; i++)
@@ -446,7 +448,7 @@ var displayResults = function()
 			c = r.insertCell(-1);
 			c.colSpan = 3;
 			c.textContent = currentPicks[i].round1.easternFinalist;
-			if (bracket.round1.easternFinalist == "")
+			if (bracket.round1.easternFinalist == "" && isTeamAlive(currentPicks[i].round1.easternFinalist) == true)
 			{
 				c.className = "noChoice";
 			}
@@ -461,11 +463,11 @@ var displayResults = function()
 			c = r.insertCell(-1);
 			c.colSpan = 3;
 			c.textContent = currentPicks[i].round1.westernFinalist;
-			if (bracket.round1.westernFinalist == "")
+			if (bracket.round1.westernFinalist == "" && isTeamAlive(currentPicks[i].round1.westernFinalist) == true)
 			{
 				c.className = "noChoice";
 			}
-			else if (currentPicks[i].round1.westernFinalist == bracket.round1.westernFinalist)
+			else if (currentPicks[i].round1.westernFinalist == bracket.round1.westernFinalist )
 			{
 				c.className = "goodChoice";
 			}
@@ -476,7 +478,7 @@ var displayResults = function()
 			c = r.insertCell(-1);
 			c.colSpan = 3;
 			c.textContent = currentPicks[i].round1.cupWinner;
-			if (bracket.round1.cupWinner == "")
+			if (bracket.round1.cupWinner == "" && isTeamAlive(currentPicks[i].round1.cupWinner) == true)
 			{
 				c.className = "noChoice";
 			}
@@ -566,6 +568,19 @@ var calculateResults = function()
 	
 }
 
+var isTeamAlive = function(team)
+{
+	var ret = false;
+	for(var i = 0; i < bracket.alive.length; i++)
+	{
+		if (bracket.alive[i] == team)
+		{
+			ret = true;
+		}
+	}
+	
+	return ret;
+}
 
 
 var gebi = function(id)
