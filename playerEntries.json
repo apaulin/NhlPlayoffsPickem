@@ -182,6 +182,15 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Vegas",
+     "numberOfGames": "7",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -268,6 +277,15 @@
     },
     {
      "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    }
+   ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Vegas",
      "numberOfGames": "6",
      "weigthOfGame": "8"
     }
@@ -360,6 +378,15 @@
      "winner": "Vegas",
      "numberOfGames": "6",
      "weigthOfGame": "7"
+    }
+   ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
     }
    ]
   }
@@ -504,6 +531,15 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Washington",
+     "numberOfGames": "7",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -594,6 +630,15 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -680,6 +725,15 @@
     },
     {
      "winner": "Winnipeg",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    }
+   ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Vegas",
      "numberOfGames": "6",
      "weigthOfGame": "8"
     }
@@ -1002,6 +1056,15 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -1090,6 +1153,15 @@
      "winner": "Vegas",
      "numberOfGames": "7",
      "weigthOfGame": "7"
+    }
+   ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Vegas",
+     "numberOfGames": "6",
+     "weigthOfGame": "8"
     }
    ]
   }
@@ -1182,6 +1254,15 @@
      "weigthOfGame": "7"
     }
    ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Vegas",
+     "numberOfGames": "7",
+     "weigthOfGame": "8"
+    }
+   ]
   }
  },
  {
@@ -1266,6 +1347,15 @@
      "numberOfGames": "5",
      "weigthOfGame": "7"
     },
+    {
+     "winner": "Vegas",
+     "numberOfGames": "5",
+     "weigthOfGame": "8"
+    }
+   ]
+  },
+  "round4": {
+   "matchups": [
     {
      "winner": "Vegas",
      "numberOfGames": "5",
@@ -1360,6 +1450,15 @@
      "winner": "Winnipeg",
      "numberOfGames": "7",
      "weigthOfGame": "7"
+    }
+   ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Vegas",
+     "numberOfGames": "4",
+     "weigthOfGame": "8"
     }
    ]
   }
@@ -1525,6 +1624,15 @@
     {
      "winner": "Winnipeg",
      "numberOfGames": "7",
+     "weigthOfGame": "8"
+    }
+   ]
+  },
+  "round4": {
+   "matchups": [
+    {
+     "winner": "Washington",
+     "numberOfGames": "6",
      "weigthOfGame": "8"
     }
    ]

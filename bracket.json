@@ -1,7 +1,6 @@
 {
  "alive": [
   "Washington",
-  "Tampa Bay",
   "Vegas"
  ],
  "round1": {
@@ -55,8 +54,8 @@
     "numberOfGames": "4"
    }
   ],
-  "easternFinalist": "",
-  "westernFinalist": "",
+  "easternFinalist": "Washington",
+  "westernFinalist": "Vegas",
   "cupWinner": ""
  },
  "round2": {
@@ -92,8 +91,8 @@
    {
     "team1": "Washington",
     "team2": "Tampa Bay",
-    "winner": "",
-    "numberOfGames": "0"
+    "winner": "Washington",
+    "numberOfGames": "7"
    },
    {
     "team1": "Winnipeg",
@@ -106,8 +105,8 @@
  "round4": {
   "matchups": [
    {
-    "team1": "",
-    "team2": "",
+    "team1": "Washington",
+    "team2": "Vegas",
     "winner": "",
     "numberOfGames": "0"
    }
